@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 from sqlalchemy import create_engine, text
 from faker import Faker
 import random
-import os
 from datetime import date
 
 # Load environment variables
@@ -37,7 +36,6 @@ treatments = ['Exercise', 'Diet', 'Get Enough Sleep']
 genders = ['Male', 'Female']
 
 def insert_fake_data(engine, num_patients=50, num_medical_records=70, num_doctors=7):
-   
     with engine.connect() as connection:
         # Insert fake patients
         for _ in range(num_patients):
@@ -104,6 +102,6 @@ def insert_fake_data(engine, num_patients=50, num_medical_records=70, num_doctor
 
         connection.commit() 
         
-if __name__ == "__main":
+if __name__ == "__main__":
     insert_fake_data(db_engine)
     print("Fake data insertion complete!")
