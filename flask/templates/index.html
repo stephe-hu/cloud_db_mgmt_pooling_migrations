@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL Cloud Database</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-200">
+
+    <header class="bg-blue-600 text-white p-4">
+        <h1 class="text-2xl">MySQL Cloud Database</h1>
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="/" class="hover:underline">Home</a></li>
+                <li><a href="/patients" class="hover:underline">Patients</a></li>
+                <li><a href="/medicalrecords" class="hover:underline">Medical Records</a></li>
+                <li><a href="/doctors" class="hover:underline">Doctors</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main class="p-4">
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+    <footer class="bg-blue-600 text-white p-4 mt-6">
+        <p>© 2023 Stephen Healthcare App. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

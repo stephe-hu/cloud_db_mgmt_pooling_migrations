@@ -1,0 +1,76 @@
+{% extends "index.html" %} 
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Records</title>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Patients</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 20px;
+            }
+            h1 {
+                text-align: center;
+                color: #000;
+            }
+            table {
+                width: 100%;
+                margin: 20px 0;
+                border-collapse: collapse;
+            }
+            table, th, td {
+                border: 1px solid #333;
+            }
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+            th {
+                background-color: rgba(0, 183, 255, 0.452);
+                color: #333;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            tr:hover {
+                background-color: #ddd;
+            }
+        </style>
+</head>
+<body>
+    <h1>Medical Records</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>Diagnosis</th>
+                <th>Treatment</th>
+                <th>Admission Date</th>
+                <th>Discharge Date</th>
+                <th>Doctor ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data%}
+            <tr>
+                <td>{{ row.patient_id }}</td>
+                <td>{{ row.diagnosis }}</td>
+                <td>{{ row.treatment }}</td>
+                <td>{{ row.admission_date }}</td>
+                <td>{{ row.discharge_date }}</td>
+                <td>{{ row.doctor_id }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+{% endblock %}
